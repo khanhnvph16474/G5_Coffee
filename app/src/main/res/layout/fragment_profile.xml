@@ -101,5 +101,18 @@
             android:background="@color/blue_btn_profile"/>
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/btn_logout_user"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:text="Đăng Xuất"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:paddingTop="14dp"
+        android:textColor="@color/red"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="130dp"
+        android:background="@color/xam"/>
 
 </LinearLayout>
