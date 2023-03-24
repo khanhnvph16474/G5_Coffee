@@ -10,18 +10,13 @@ import android.view.ViewGroup;
 
 import com.poly.g5_coffee.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CartFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class CartFragment extends Fragment {
 
 
     public CartFragment() {
         // Required empty public constructor
     }
-
 
     public static CartFragment newInstance(String param1, String param2) {
         CartFragment fragment = new CartFragment();
