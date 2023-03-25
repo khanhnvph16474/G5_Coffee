@@ -14,11 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.poly.g5_coffee.DBhelper;
-import com.poly.g5_coffee.Fragment.CartFragment;
 import com.poly.g5_coffee.MainActivity;
 import com.poly.g5_coffee.R;
-import com.poly.g5_coffee.User;
-
 
 
 public class DangNhap_Fragment extends Fragment {

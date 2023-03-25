@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mNavigationView = findViewById(R.id.id_BottomNav);
+        mNavigationView = findViewById(R.id.Bottom_Nav);
         mViewPager = findViewById(R.id.view_pager);
         setUpViewPager();
         mNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -29,19 +29,19 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 switch (item.getItemId()){
-                    case R.id.action_Home:
+                    case R.id.ic_home:
                         mViewPager.setCurrentItem(0);
                         break;
-                    case R.id.action_Notification:
+                    case R.id.ic_notification:
                         mViewPager.setCurrentItem(1);
                         break;
-                    case R.id.action_ShoppingCart:
+                    case R.id.ic_shopping:
                         mViewPager.setCurrentItem(2);
                         break;
-                    case R.id.action_HistoryShopping:
+                    case R.id.ic_history:
                         mViewPager.setCurrentItem(3);
                         break;
-                    case R.id.action_info:
+                    case R.id.ic_profile:
                         mViewPager.setCurrentItem(4);
                         break;
                 }

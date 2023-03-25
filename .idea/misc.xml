@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/drawable/bg_search.xml" value="0.218" />
         <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/activity_chitietsanpham.xml" value="0.14221014492753623" />
         <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/activity_main.xml" value="0.12360688956433637" />
+        <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/activity_search_product.xml" value="0.11302083333333333" />
         <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/dangky_fragment.xml" value="0.176" />
         <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/dangnhap_fragment.xml" value="0.176" />
         <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/fragment_cart.xml" value="0.25416666666666665" />

@@ -35,8 +35,7 @@ public class chitietsanpham extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(chitietsanpham.this, User.class);
-                startActivity(intent);
+
             }
         });
     }
