@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.poly.g5_coffee.DBhelper;
+import com.poly.g5_coffee.MainActivity;
 import com.poly.g5_coffee.R;
 import com.poly.g5_coffee.User;
 
@@ -72,7 +73,7 @@ public class Dangki_Fragment extends Fragment {
                 Boolean cheklogin = databaseHelper.CheckLogin(username, pass);
                 if(cheklogin == true){
                     Toast.makeText(getContext(), "Dang nhap thanh cong", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getActivity(), User.class);
+                    Intent intent = new Intent(getActivity(), MainActivity.class);
                     startActivity(intent);
                 }else {
                     Toast.makeText(getContext(), "Dang nhap that bai", Toast.LENGTH_SHORT).show();

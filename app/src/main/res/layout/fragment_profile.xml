@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Fragment.fragmentProfile">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/backgrounds"
+        android:text="Thông tin cá nhân"
+        android:textStyle="bold"
+        android:textSize="26dp"
+        android:textColor="@color/white"
+        android:paddingTop="20dp"
+        android:paddingLeft="10dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_img_profile"
+            android:layout_margin="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tên User"
+                android:textColor="#A5A5A5"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_sdt_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SDT: 123123"
+                android:textColor="#A5A5A5"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_Address_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Địa Chỉ: Hà Nội"
+                android:textColor="#A5A5A5"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/btn_create_profile_user"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Chỉnh Sửa Thông Tin Cá Nhân"
+            android:textSize="18dp"
+            android:paddingTop="14dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingLeft="20dp"
+            android:textColor="@color/xam"
+            android:background="@color/blue_btn_profile"/>
+        <TextView
+            android:id="@+id/btn_reset_pass_user"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:text="Thay Đổi Mật Khẩu"
+            android:textSize="18dp"
+            android:paddingTop="14dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:paddingLeft="20dp"
+            android:textColor="@color/xam"
+            android:background="@color/blue_btn_profile"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/btn_logout_user"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:text="Đăng Xuất"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:paddingTop="14dp"
+        android:textColor="@color/red"
+        android:layout_marginTop="130dp"
+        android:layout_marginLeft="130dp"
+        android:background="@color/xam"/>
+
+</LinearLayout>

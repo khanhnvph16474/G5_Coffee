@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">G5_Coffee</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="action_home">Trang chủ</string>
+    <string name="action_notification">Thông báo</string>
+    <string name="action_shoppingCart">Giỏ hàng</string>
+    <string name="action_historyShopping">Lịch sử mua hàng</string>
+    <string name="action_info">Thông tin cá nhân</string>
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>

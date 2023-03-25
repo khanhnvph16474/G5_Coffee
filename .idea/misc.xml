@@ -3,6 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/activity_chitietsanpham.xml" value="0.14221014492753623" />
+        <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/activity_main.xml" value="0.12360688956433637" />
+        <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/dangky_fragment.xml" value="0.176" />
+        <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/dangnhap_fragment.xml" value="0.176" />
+        <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/fragment_cart.xml" value="0.25416666666666665" />
+        <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/fragment_history.xml" value="0.25416666666666665" />
+        <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/fragment_notification.xml" value="0.25416666666666665" />
+        <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/layout_item_giohang.xml" value="0.14221014492753623" />
+        <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/manhinhchinh.xml" value="0.25416666666666665" />
+        <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/layout/splash.xml" value="0.253125" />
+        <entry key="..\:/Fpoly/g5_coffee/app/src/main/res/menu/menu_bottom_nav.xml" value="0.25416666666666665" />
         <entry key="..\:/G5_Coffeee/app/src/main/res/drawable-v24/ct_bogoc.xml" value="0.1" />
         <entry key="..\:/G5_Coffeee/app/src/main/res/drawable-v24/ct_bogoctron.xml" value="0.1" />
         <entry key="..\:/G5_Coffeee/app/src/main/res/drawable-v24/ct_bogoctron2.xml" value="0.1" />
