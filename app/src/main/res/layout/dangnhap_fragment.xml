@@ -70,13 +70,14 @@
             android:orientation="horizontal">
 
             <Button
-                android:background="@drawable/ct_bogoctron"
                 android:id="@+id/btn_llogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:text="Đăng nhập" />
+                android:background="@drawable/ct_bogoctron"
+                android:text="Đăng nhập"
+                app:backgroundTint="@color/backgrounds" />
 
         </LinearLayout>
     </LinearLayout>
