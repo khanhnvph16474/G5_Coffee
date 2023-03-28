@@ -12,8 +12,7 @@ public class MyDialogFragment extends DialogFragment {
     @Override
     public android.app.Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(getActivity());
-        dialog.setTitle("Đăng Xuất");
-        dialog.setMessage("Bạn Muốn Đăng Xuất Tài Khoản ?");
+        dialog.setMessage("Bạn muốn đăng xuất tài khoản ?");
         dialog.setPositiveButton("Có", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
