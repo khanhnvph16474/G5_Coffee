@@ -11,11 +11,13 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
+
 
 import com.poly.g5_coffee.Activity.ChangePasswordActivity;
 import com.poly.g5_coffee.Activity.EditProfileUserActivity;
-import com.poly.g5_coffee.FragmentLogin.DangNhap_Fragment;
+import com.poly.g5_coffee.MyDialogFragment;
 import com.poly.g5_coffee.R;
 
 public class fragmentProfile extends Fragment {
@@ -48,7 +50,8 @@ public class fragmentProfile extends Fragment {
         btn_logOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                MyDialogFragment myDialogFragment = new MyDialogFragment();
+                myDialogFragment.show(getFragmentManager(), "Dialog");
             }
         });
 
