@@ -66,6 +66,7 @@
             android:background="@drawable/ct_bogoctron2"
             android:textSize="25dp"
             android:textColor="@color/white"
+            android:hint="1"
             />
         <ImageView
             android:id="@+id/add"
@@ -79,6 +80,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="25dp"
+            android:hint="35000"
             />
     </LinearLayout>
         <LinearLayout

@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'com.poly.g5_coffee'
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
         applicationId "com.poly.g5_coffee"
