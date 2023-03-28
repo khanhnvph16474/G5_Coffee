@@ -6,12 +6,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Fragment.CartFragment">
-
-    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/backgrounds"
+        android:text="Giỏ hàng"
+        android:textStyle="bold"
+        android:textSize="26dp"
+        android:textColor="@color/white"
+        android:paddingTop="20dp"
+        android:paddingLeft="10dp"/>
     <LinearLayout
         android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
         >
         <TextView
@@ -30,7 +39,7 @@
     <ListView
         android:id="@+id/lv_cart"
         android:layout_width="match_parent"
-        android:layout_height="600dp"
+        android:layout_height="500dp"
         android:layout_margin="20dp"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,26 +50,28 @@
             android:layout_height="wrap_content"
             android:text="Tổng thanh toán: "
             android:layout_marginTop="12dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="5dp"
             android:textStyle="bold"
             android:textSize="18dp"/>
-    <LinearLayout
-        android:id="@+id/them"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginLeft="100dp"
-        android:background="@drawable/ct_bogoctron3"
-        >
-
         <TextView
-            android:layout_width="100dp"
+            android:id="@+id/tv_TotalPriceCart_"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="8dp"
+            android:hint="000.000.000"
+            android:layout_marginTop="12dp"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
+        <Button
+            android:id="@+id/btn_Buy_cart01"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
             android:text="Đặt hàng"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:textSize="18dp" />
-    </LinearLayout>
+            android:textSize="15dp"
+            android:backgroundTint="@color/backgrounds"
+            app:cornerRadius="15dp"/>
     </LinearLayout>
 </LinearLayout>

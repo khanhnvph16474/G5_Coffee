@@ -45,8 +45,6 @@ public class MainActivity extends AppCompatActivity {
                         mViewPager.setCurrentItem(4);
                         break;
                 }
-
-
                 return true;
             }
         });
