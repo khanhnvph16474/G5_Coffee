@@ -44,4 +44,14 @@ public class User {
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", diaChi='" + diaChi + '\'' +
+                '}';
+    }
 }
