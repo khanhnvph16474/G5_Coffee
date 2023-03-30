@@ -14,12 +14,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.poly.g5_coffee.CustomToast;
 import com.poly.g5_coffee.R;
 
 
 public class CartFragment extends Fragment {
     private Button btn_buy;
-
+    CustomToast customToast;
     public CartFragment() {
         // Required empty public constructor
     }
@@ -63,13 +64,14 @@ public class CartFragment extends Fragment {
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getContext(), "Đã đặt hàng", Toast.LENGTH_SHORT).show();
+                customToast.makeText(getContext(),"Đặt hàng thành công",CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
+
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(getContext(), "Cancel", Toast.LENGTH_SHORT).show();
+                customToast.makeText(getContext(),"Đặt hàng không thành công",CustomToast.LENGTH_LONG,CustomToast.ERROR,true).show();
             }
         });
         AlertDialog alertDialog = builder.create();
