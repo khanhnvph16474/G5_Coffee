@@ -41,7 +41,7 @@ public class DangNhap_Fragment extends Fragment {
                 String pass = txtpass.getText().toString();
 
                 Boolean cheklogin = databaseHelper.CheckLogin(username, pass);
-                if (cheklogin == true && username.equalsIgnoreCase("admin")&&pass.equalsIgnoreCase("admin")){
+                if (username.equalsIgnoreCase("admin")&&pass.equalsIgnoreCase("admin")){
                     customToast.makeText(getContext(), "Đăng nhập thành công Admin Account", CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
                     Intent intentAdmin = new Intent(getActivity(), ActivityAdmin.class);
                     startActivity(intentAdmin);
