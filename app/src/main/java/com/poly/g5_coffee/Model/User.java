@@ -6,6 +6,9 @@ public class User {
     private int phoneNumber;
     private String diaChi;
 
+    public User() {
+    }
+
     public User(int id, String name, int phoneNumber, String diaChi) {
         this.id = id;
         this.name = name;
