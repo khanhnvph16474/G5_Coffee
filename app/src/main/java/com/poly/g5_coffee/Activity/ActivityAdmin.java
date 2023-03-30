@@ -1,4 +1,4 @@
-package com.poly.g5_coffee;
+package com.poly.g5_coffee.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.poly.g5_coffee.R;
+import com.poly.g5_coffee.viewPagerAdapterAdmin;
 
 public class ActivityAdmin extends AppCompatActivity {
     private BottomNavigationView mNavigationView;

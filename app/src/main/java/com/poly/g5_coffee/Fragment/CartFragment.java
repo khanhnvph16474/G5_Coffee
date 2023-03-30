@@ -65,7 +65,6 @@ public class CartFragment extends Fragment {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 customToast.makeText(getContext(),"Đặt hàng thành công",CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
-
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

@@ -26,7 +26,7 @@
             android:name=".Activity.EditProfileUserActivity"
             android:exported="true" />
         <activity
-            android:name=".ActivityAdmin"
+            android:name=".splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,7 +35,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".splash"
+            android:name=".Activity.ActivityAdmin"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

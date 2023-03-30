@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.poly.g5_coffee.Activity.ActivityAdmin;
 import com.poly.g5_coffee.DBhelper;
 import com.poly.g5_coffee.MainActivity;
 import com.poly.g5_coffee.R;
@@ -38,7 +39,12 @@ public class DangNhap_Fragment extends Fragment {
                 String pass = txtpass.getText().toString();
 
                 Boolean cheklogin = databaseHelper.CheckLogin(username, pass);
-                if(cheklogin == true){
+                if (cheklogin == true && username.contains("admin")){
+                    Toast.makeText(getContext(), "Dang nhap thanh cong Admin Account", Toast.LENGTH_SHORT).show();
+                    Intent intentAdmin = new Intent(getActivity(), ActivityAdmin.class);
+                    startActivity(intentAdmin);
+                }
+                else if(cheklogin == true){
                     Toast.makeText(getContext(), "Dang nhap thanh cong", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getActivity(), MainActivity.class);
                     startActivity(intent);
