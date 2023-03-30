@@ -6,6 +6,9 @@ public class User {
     private int phoneNumber;
     private String diaChi;
 
+    public User() {
+    }
+
     public User(int id, String name, int phoneNumber, String diaChi) {
         this.id = id;
         this.name = name;
@@ -43,5 +46,15 @@ public class User {
 
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", diaChi='" + diaChi + '\'' +
+                '}';
     }
 }
