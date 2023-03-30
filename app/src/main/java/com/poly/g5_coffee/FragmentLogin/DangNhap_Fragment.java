@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.poly.g5_coffee.Activity.ActivityAdmin;
+import com.poly.g5_coffee.CustomToast;
 import com.poly.g5_coffee.DBhelper;
 import com.poly.g5_coffee.MainActivity;
 import com.poly.g5_coffee.R;
@@ -23,6 +24,7 @@ public class DangNhap_Fragment extends Fragment {
     Button btnlogin;
     EditText txtname, txtpass;
     DBhelper databaseHelper;
+    CustomToast customToast;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,17 +41,18 @@ public class DangNhap_Fragment extends Fragment {
                 String pass = txtpass.getText().toString();
 
                 Boolean cheklogin = databaseHelper.CheckLogin(username, pass);
-                if (cheklogin == true && username.contains("admin")){
-                    Toast.makeText(getContext(), "Dang nhap thanh cong Admin Account", Toast.LENGTH_SHORT).show();
+                if (cheklogin == true && username.equalsIgnoreCase("admin")&&pass.equalsIgnoreCase("admin")){
+                    customToast.makeText(getContext(), "Đăng nhập thành công Admin Account", CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
                     Intent intentAdmin = new Intent(getActivity(), ActivityAdmin.class);
                     startActivity(intentAdmin);
                 }
                 else if(cheklogin == true){
-                    Toast.makeText(getContext(), "Dang nhap thanh cong", Toast.LENGTH_SHORT).show();
+                    customToast.makeText(getContext(), "Đăng nhập thành công", CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
                     Intent intent = new Intent(getActivity(), MainActivity.class);
                     startActivity(intent);
                 }else {
-                    Toast.makeText(getContext(), "Dang nhap that bai", Toast.LENGTH_SHORT).show();
+                    customToast.makeText(getContext(), "Tài khoản hoặc mật khẩu không chính xác", CustomToast.LENGTH_LONG,CustomToast.ERROR,true).show();
+                    txtpass.setText("");
                 }
             }
         });
