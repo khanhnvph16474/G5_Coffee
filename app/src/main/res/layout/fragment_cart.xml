@@ -15,7 +15,8 @@
         android:textSize="26dp"
         android:textColor="@color/white"
         android:paddingTop="20dp"
-        android:paddingLeft="10dp"/>
+        android:paddingLeft="10dp"
+        />
     <LinearLayout
         android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"

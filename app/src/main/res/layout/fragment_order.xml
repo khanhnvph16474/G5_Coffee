@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     tools:context=".Fragment.fragmentProfile">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="Danh sách đơn hàng"
+        android:textStyle="bold"
+        android:textSize="23sp"
+        android:textColor="@color/black"/>
+    <ListView
+        android:id="@+id/lv_oder_admin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 
-
-</RelativeLayout>
+</LinearLayout>
