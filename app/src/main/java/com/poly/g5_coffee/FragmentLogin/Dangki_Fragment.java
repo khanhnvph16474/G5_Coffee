@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.poly.g5_coffee.CustomToast;
 import com.poly.g5_coffee.DBhelper;
 import com.poly.g5_coffee.MainActivity;
 import com.poly.g5_coffee.R;
@@ -44,19 +45,20 @@ public class Dangki_Fragment extends Fragment {
                 String confirm_password = txtRsPass.getText().toString();
                 if(username.equals("") || password.equals("") || confirm_password.equals("")){
                     Toast.makeText(getContext(), "Fields Required", Toast.LENGTH_SHORT).show();
+                    CustomToast.makeText(getContext(), "Fields Required", CustomToast.LENGTH_LONG,CustomToast.ERROR,true).show();
                 }else{
                     if(password.equals(confirm_password)){
                         Boolean checkusername = databaseHelper.CheckUsername(username);
                         if(checkusername == true){
                             Boolean insert = databaseHelper.Insert(username, password);
                             if(insert == true){
-                                Toast.makeText(getContext(), "Registered", Toast.LENGTH_SHORT).show();
+                                CustomToast.makeText(getContext(), "Đăng kí thành công", CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
                             }
                         }else{
-                            Toast.makeText(getContext(), "Username already taken", Toast.LENGTH_SHORT).show();
+                            CustomToast.makeText(getContext(), "Username already taken", CustomToast.LENGTH_LONG,CustomToast.WARNING,true).show();
                         }
                     }else{
-                        Toast.makeText(getContext(), "Password does not match", Toast.LENGTH_SHORT).show();
+                        CustomToast.makeText(getContext(), "Password không trùng khớp", CustomToast.LENGTH_LONG, CustomToast.WARNING, true).show();
                     }
                 }
 
@@ -70,11 +72,11 @@ public class Dangki_Fragment extends Fragment {
 
                 Boolean cheklogin = databaseHelper.CheckLogin(username, pass);
                 if(cheklogin == true){
-                    Toast.makeText(getContext(), "Dang nhap thanh cong", Toast.LENGTH_SHORT).show();
+                    CustomToast.makeText(getContext(), "Đăng nhập thành công", CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
                     Intent intent = new Intent(getActivity(), MainActivity.class);
                     startActivity(intent);
                 }else {
-                    Toast.makeText(getContext(), "Dang nhap that bai", Toast.LENGTH_SHORT).show();
+                    CustomToast.makeText(getContext(), "Đăng nhập thất bại", CustomToast.LENGTH_LONG,CustomToast.ERROR,true).show();
                 }
             }
         });
