@@ -26,14 +26,21 @@
             android:src="@drawable/anhmhc"
             />
 
-        <Button
-            android:id="@+id/btntieptuc"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
-            android:layout_marginRight="70dp"
-            android:background="@drawable/ct_bogoctron"
-            android:text="TIẾP TỤC"
-            />
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btntieptuc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/ct_bogoctron"
+                android:text="Tiếp tục"
+                app:backgroundTint="@color/backgrounds" />
+
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
