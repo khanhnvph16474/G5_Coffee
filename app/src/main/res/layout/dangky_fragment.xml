@@ -13,10 +13,35 @@
         android:orientation="vertical"
         android:layout_marginBottom="300dp"
         >
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:background="@drawable/ct_bogoctron"
+                android:id="@+id/et_sdt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Nhập SDT" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:background="@drawable/ct_bogoctron"
+                android:id="@+id/et_diachi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="NhậP địa chỉ" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
             >
 
             <com.google.android.material.textfield.TextInputEditText
@@ -31,7 +56,7 @@
         <com.google.android.material.textfield.TextInputLayout
 
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -46,7 +71,7 @@
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="70dp"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
