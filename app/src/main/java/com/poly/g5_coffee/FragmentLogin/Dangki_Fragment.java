@@ -22,7 +22,7 @@ import com.poly.g5_coffee.R;
 public class Dangki_Fragment extends Fragment {
 
     DBhelper databaseHelper;
-    EditText txtName , txtPass, txtRsPass;
+    EditText txtName , txtPass, txtRsPass, txtSDT, txtDiachi;
     Button btbDangky, btnDangnhap;
     @Nullable
     @Override
@@ -33,6 +33,8 @@ public class Dangki_Fragment extends Fragment {
         txtName = view.findViewById(R.id.et_lusername);
         txtPass = view.findViewById(R.id.et_lpassword);
         txtRsPass = view.findViewById(R.id.et_lnhaplaipass);
+        txtSDT = view.findViewById(R.id.et_sdt);
+        txtDiachi = view.findViewById(R.id.et_diachi);
         btbDangky = view.findViewById(R.id.btn_lregister);
         btnDangnhap = view.findViewById(R.id.btn_llogin);
 
