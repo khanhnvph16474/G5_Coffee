@@ -1,4 +1,4 @@
-package com.poly.g5_coffee;
+package com.poly.g5_coffee.dao;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
@@ -6,6 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.poly.g5_coffee.DBhelper;
 import com.poly.g5_coffee.Model.Product;
 
 import java.util.ArrayList;

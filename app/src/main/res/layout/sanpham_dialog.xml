@@ -22,20 +22,21 @@
         android:layout_marginBottom="20dp"
         android:hint="Tên Sản Phẩm: " />
     <EditText
-        android:id="@+id/edSanPham"
+        android:id="@+id/edGiaSanPham"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:hint="Giá Sản Phẩm: " />
-    <Spinner
-        android:id="@+id/spLoaiSach"
+    <EditText
+        android:id="@+id/edMoTa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"/>
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:hint="Mô Tả: " />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
