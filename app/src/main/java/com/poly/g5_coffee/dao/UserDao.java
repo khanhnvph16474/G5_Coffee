@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.poly.g5_coffee.DBhelper;
-import com.poly.g5_coffee.FragmentLogin.Dangki_Fragment;
 import com.poly.g5_coffee.Model.User;
 
 import java.util.ArrayList;
@@ -35,13 +34,14 @@ public class UserDao {
 
     }
 
-    public int checkLogin(String id, String password){
+    public Boolean checkLogin(String name, String password){
         String sql = "SELECT * FROM listUser WHERE userName=? AND password=?";
-        List<User> list = getData(sql, id, password);
+        List<User> list = getData(sql, name, password);
         if(list.size() == 0)
-            return -1;
-        return 1;
+            return false;
+        return true;
     }
+
 
     @SuppressLint("Range")
     private List<User> getData(String sql, String...selectionArgs){

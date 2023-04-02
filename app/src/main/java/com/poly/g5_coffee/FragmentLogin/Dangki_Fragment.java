@@ -23,7 +23,7 @@ import com.poly.g5_coffee.dao.UserDao;
 
 public class Dangki_Fragment extends Fragment {
 
-    EditText edtName,edtUsername , edtPass, edtRsPass, edtSDT, edtDiachi;
+    EditText edtName,edtUsername , edtPass, edtSDT, edtDiachi;
     Button btbDangky, btnDangnhap;
     UserDao dao;
     @Nullable
@@ -34,7 +34,7 @@ public class Dangki_Fragment extends Fragment {
 
         edtUsername = view.findViewById(R.id.edt_username);
         edtPass = view.findViewById(R.id.edt_password);
-        edtRsPass = view.findViewById(R.id.edt_nhaplaipass);
+
         edtName = view.findViewById(R.id.edt_name);
         edtSDT = view.findViewById(R.id.edt_sdt);
         edtDiachi = view.findViewById(R.id.edt_diachi);
@@ -51,19 +51,27 @@ public class Dangki_Fragment extends Fragment {
                 user.name = edtName.getText().toString();
                 user.phoneNumber = edtSDT.getText().toString();
                 user.diaChi =edtDiachi.getText().toString();
-                String confirm_password = edtRsPass.getText().toString();
 
-                if(dao.insert(user)>0){
-                    Toast.makeText(getActivity(), "Lưu thành công", Toast.LENGTH_SHORT).show();
+                String username = edtUsername.getText().toString();
+                String pass = edtPass.getText().toString();
+                String name = edtName.getText().toString();
+                String phone = edtSDT.getText().toString();
+                String diachi = edtDiachi.getText().toString();
+                if (username.equals("") || pass.equals("") ||name.equals("")|| phone.equals("") |diachi.equals("")){
+                    Toast.makeText(getActivity(),"Không được bỏ trống",
+                            Toast.LENGTH_SHORT).show();
+                }else {
+                    if (dao.insert(user) > 0) {
+                        Toast.makeText(getActivity(), "Đăng kí thành công", Toast.LENGTH_SHORT).show();
 //                    edtName.setText("");
 //                    edtSDT.setText("");
 //                    edtDiachi.setText("");
 //                    edtUsername.setText("");
 //                    edtPass.setText("");
-                }else {
-                    Toast.makeText(getActivity(), "Lưu thất bại", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getActivity(), "Lưu thất bại", Toast.LENGTH_SHORT).show();
+                    }
                 }
-
             }
         });
         btnDangnhap.setOnClickListener(new View.OnClickListener() {
@@ -71,19 +79,19 @@ public class Dangki_Fragment extends Fragment {
             public void onClick(View v) {
                 String username = edtUsername.getText().toString();
                 String password = edtPass.getText().toString();
-                String confirm_password = edtRsPass.getText().toString();
+
                 String name = edtName.getText().toString();
                 String phone = edtSDT.getText().toString();
                 String diachi = edtDiachi.getText().toString();
 
-//                Boolean cheklogin = databaseHelper.CheckLogin(username, pass);
-//                if(cheklogin == true){
-//                    CustomToast.makeText(getContext(), "Đăng nhập thành công", CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
-//                    Intent intent = new Intent(getActivity(), MainActivity.class);
-//                    startActivity(intent);
-//                }else {
-//                    CustomToast.makeText(getContext(), "Đăng nhập thất bại", CustomToast.LENGTH_LONG,CustomToast.ERROR,true).show();
-//                }
+                Boolean cheklogin = dao.checkLogin(username, password);
+                if(cheklogin == true){
+                    Toast.makeText(getContext(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                    startActivity(intent);
+                }else {
+                    Toast.makeText(getContext(), "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         return view;
