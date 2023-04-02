@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import com.poly.g5_coffee.MyDialogFragment;
 import com.poly.g5_coffee.R;
 
-public class fragmentProfileAdmin extends Fragment {
+public class FragmentProfileAdmin extends Fragment {
     Button btn_edit_profile, btn_changePassword, btn_logOut;
     @Nullable
     @Override

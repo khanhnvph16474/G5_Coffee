@@ -6,9 +6,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.poly.g5_coffee.FragmentAdmin.HomeAdminFragment;
-import com.poly.g5_coffee.FragmentAdmin.fragmentProfileAdmin;
-import com.poly.g5_coffee.FragmentAdmin.fragmentOrder;
-import com.poly.g5_coffee.FragmentAdmin.fragmentThongke;
+import com.poly.g5_coffee.FragmentAdmin.FragmentProfileAdmin;
+import com.poly.g5_coffee.FragmentAdmin.FragmentOrder;
+import com.poly.g5_coffee.FragmentAdmin.FragmentThongke;
 
 public class viewPagerAdapterAdmin extends FragmentStatePagerAdapter {
     public viewPagerAdapterAdmin(@NonNull FragmentManager fm, int behavior) {
@@ -22,11 +22,11 @@ public class viewPagerAdapterAdmin extends FragmentStatePagerAdapter {
             case 0:
                 return new HomeAdminFragment();
             case 1:
-                return new fragmentOrder();
+                return new FragmentOrder();
             case 2:
-                return new fragmentThongke();
+                return new FragmentThongke();
             case 3:
-                return new fragmentProfileAdmin();
+                return new FragmentProfileAdmin();
             default:
                return new HomeAdminFragment();
         }

@@ -6,9 +6,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.poly.g5_coffee.Fragment.CartFragment;
-import com.poly.g5_coffee.Fragment.fragmentHistory;
-import com.poly.g5_coffee.Fragment.fragmentHome;
-import com.poly.g5_coffee.Fragment.fragmentNotification;
+import com.poly.g5_coffee.Fragment.FragmentHistory;
+import com.poly.g5_coffee.Fragment.FragmentHome;
+import com.poly.g5_coffee.Fragment.FragmentNotification;
 import com.poly.g5_coffee.Fragment.FragmentProfile;
 
 public class viewPagerAdapter extends FragmentStatePagerAdapter {
@@ -21,17 +21,17 @@ public class viewPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new fragmentHome();
+                return new FragmentHome();
             case 1:
-                return new fragmentNotification();
+                return new FragmentNotification();
             case 2:
                 return new CartFragment();
             case 3:
-                return new fragmentHistory();
+                return new FragmentHistory();
             case 4:
                 return new FragmentProfile();
             default:
-               return new fragmentHome();
+               return new FragmentHome();
         }
     }
 

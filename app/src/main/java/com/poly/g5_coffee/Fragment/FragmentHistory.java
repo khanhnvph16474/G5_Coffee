@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 
 import com.poly.g5_coffee.R;
 
-public class fragmentHistory extends Fragment {
+public class FragmentHistory extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

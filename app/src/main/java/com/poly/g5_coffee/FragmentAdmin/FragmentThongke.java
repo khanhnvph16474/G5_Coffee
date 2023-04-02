@@ -11,11 +11,11 @@ import androidx.fragment.app.Fragment;
 
 import com.poly.g5_coffee.R;
 
-public class fragmentOrder extends Fragment {
+public class FragmentThongke extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_order, container, false);
+        View view = inflater.inflate(R.layout.fragment_thongke, container, false);
         return view;
     }
 }
