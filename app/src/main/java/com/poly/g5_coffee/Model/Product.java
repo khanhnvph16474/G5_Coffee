@@ -1,11 +1,11 @@
 package com.poly.g5_coffee.Model;
 
 public class Product {
-    private int id;
-    private String nameSp;
-    private int price;
-    private int soluong;
-    private String message;
+    public int id;
+    public String nameSp;
+    public int price;
+    public int soluong;
+    public String message;
 
     public Product() {
     }
