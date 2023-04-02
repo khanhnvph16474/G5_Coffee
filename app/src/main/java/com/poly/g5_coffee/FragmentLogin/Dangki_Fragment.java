@@ -16,20 +16,22 @@ import androidx.fragment.app.Fragment;
 import com.poly.g5_coffee.CustomToast;
 import com.poly.g5_coffee.DBhelper;
 import com.poly.g5_coffee.MainActivity;
+import com.poly.g5_coffee.Model.User;
 import com.poly.g5_coffee.R;
+import com.poly.g5_coffee.dao.UserDao;
 
 
 public class Dangki_Fragment extends Fragment {
 
-    DBhelper databaseHelper;
     EditText edtName,edtUsername , edtPass, edtRsPass, edtSDT, edtDiachi;
     Button btbDangky, btnDangnhap;
+    UserDao dao;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.dangky_fragment, container, false);
 
-        databaseHelper = new DBhelper(getActivity());
+
         edtUsername = view.findViewById(R.id.edt_username);
         edtPass = view.findViewById(R.id.edt_password);
         edtRsPass = view.findViewById(R.id.edt_nhaplaipass);
@@ -38,18 +40,29 @@ public class Dangki_Fragment extends Fragment {
         edtDiachi = view.findViewById(R.id.edt_diachi);
         btbDangky = view.findViewById(R.id.btn_lregister);
         btnDangnhap = view.findViewById(R.id.btn_llogin);
-
+        dao = new UserDao(getActivity());
         btbDangky.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                String username = edtUsername.getText().toString();
-                String password = edtPass.getText().toString();
+                User user = new User();
+                user.userName = edtUsername.getText().toString();
+                user.password = edtPass.getText().toString();
+                user.name = edtName.getText().toString();
+                user.phoneNumber = edtSDT.getText().toString();
+                user.diaChi =edtDiachi.getText().toString();
                 String confirm_password = edtRsPass.getText().toString();
-                String name = edtName.getText().toString();
-                String phone = edtSDT.getText().toString();
-                String diachi = edtDiachi.getText().toString();
 
+                if(dao.insert(user)>0){
+                    Toast.makeText(getActivity(), "Lưu thành công", Toast.LENGTH_SHORT).show();
+//                    edtName.setText("");
+//                    edtSDT.setText("");
+//                    edtDiachi.setText("");
+//                    edtUsername.setText("");
+//                    edtPass.setText("");
+                }else {
+                    Toast.makeText(getActivity(), "Lưu thất bại", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
@@ -74,5 +87,7 @@ public class Dangki_Fragment extends Fragment {
             }
         });
         return view;
+
+
     }
 }

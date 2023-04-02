@@ -1,15 +1,12 @@
 package com.poly.g5_coffee;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 public class DBhelper extends SQLiteOpenHelper {
     static final String dbName="listapp";
-    static final int dbVersion=2;
+    static final int dbVersion=1;
 
     public DBhelper(Context context) {
         super(context, dbName, null, dbVersion);
@@ -22,7 +19,7 @@ public class DBhelper extends SQLiteOpenHelper {
                 "create table listUser (" +
                         "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         "name TEXT NOT NULL, " +
-                        "phoneNumber INTEGER NOT NULL," +
+                        "phoneNumber TEXT NOT NULL," +
                         "diaChi TEXT NOT NULL," +
                         "userName TEXT NOT NULL," +
                         "password TEXT NOT NULL)";
