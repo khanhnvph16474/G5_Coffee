@@ -40,20 +40,20 @@ public class DangNhap_Fragment extends Fragment {
                 String username = txtname.getText().toString();
                 String pass = txtpass.getText().toString();
 
-                Boolean cheklogin = databaseHelper.CheckLogin(username, pass);
-                if (username.equalsIgnoreCase("admin")&&pass.equalsIgnoreCase("admin")){
-                    customToast.makeText(getContext(), "Đăng nhập thành công Admin Account", CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
-                    Intent intentAdmin = new Intent(getActivity(), ActivityAdmin.class);
-                    startActivity(intentAdmin);
-                }
-                else if(cheklogin == true){
-                    customToast.makeText(getContext(), "Đăng nhập thành công", CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
-                    Intent intent = new Intent(getActivity(), MainActivity.class);
-                    startActivity(intent);
-                }else {
-                    customToast.makeText(getContext(), "Tài khoản hoặc mật khẩu không chính xác", CustomToast.LENGTH_LONG,CustomToast.ERROR,true).show();
-                    txtpass.setText("");
-                }
+//                Boolean cheklogin = databaseHelper.CheckLogin(username, pass);
+//                if (username.equalsIgnoreCase("admin")&&pass.equalsIgnoreCase("admin")){
+//                    customToast.makeText(getContext(), "Đăng nhập thành công Admin Account", CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
+//                    Intent intentAdmin = new Intent(getActivity(), ActivityAdmin.class);
+//                    startActivity(intentAdmin);
+//                }
+//                else if(cheklogin == true){
+//                    customToast.makeText(getContext(), "Đăng nhập thành công", CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
+//                    Intent intent = new Intent(getActivity(), MainActivity.class);
+//                    startActivity(intent);
+//                }else {
+//                    customToast.makeText(getContext(), "Tài khoản hoặc mật khẩu không chính xác", CustomToast.LENGTH_LONG,CustomToast.ERROR,true).show();
+//                    txtpass.setText("");
+//                }
             }
         });
         return view;

@@ -5,56 +5,47 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 public class DBhelper extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "login.db";
+    static final String dbName="listapp";
+    static final int dbVersion=2;
 
     public DBhelper(Context context) {
-        super(context, DATABASE_NAME, null, 1);
+        super(context, dbName, null, dbVersion);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE user(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT, name TEXT, phoneNumber INTEGER, diaChi TEXT)");
+        // tạo bảng User
+        String createTableUser=
+                "create table listUser (" +
+                        "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        "name TEXT NOT NULL, " +
+                        "phoneNumber INTEGER NOT NULL," +
+                        "diaChi TEXT NOT NULL," +
+                        "userName TEXT NOT NULL," +
+                        "password TEXT NOT NULL)";
+        db.execSQL(createTableUser);
 
-        db.execSQL("CREATE TABLE product(id INTEGER PRIMARY KEY AUTOINCREMENT, nameSp TEXT, price INTEGER, soluong INTEGER, message TEXT)");
+        // tạo bảng Product
+        String createTableProduct=
+                "create table listProduct (" +
+                        "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        "nameSp TEXT NOT NULL, " +
+                        "price INTEGER NOT NULL," +
+                        "soluong INTEGER NOT NULL," +
+                        "message TEXT NOT NULL)";
+        db.execSQL(createTableProduct);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS user");
+        String createTableUser = "drop table if exists listUser";
+        db.execSQL(createTableUser);
+        String createTableProduct = "drop table if exists listProduct";
+        db.execSQL(createTableProduct);
+        onCreate(db);
     }
 
-    public boolean Insert(String username, String password) {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("username", username);
-        contentValues.put("password", password);
-        long result = sqLiteDatabase.insert("user", null, contentValues);
-        if (result == -1) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    public Boolean CheckUsername(String username) {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM user WHERE username=?", new String[]{username});
-        if (cursor.getCount() > 0) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-
-    public Boolean CheckLogin(String username, String password) {
-        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM user WHERE username=? AND password=?", new String[]{username, password});
-        if (cursor.getCount() > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 }

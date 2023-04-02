@@ -5,15 +5,19 @@ public class User {
     private String name;
     private int phoneNumber;
     private String diaChi;
+    private String userName;
+    private String password;
 
     public User() {
     }
 
-    public User(int id, String name, int phoneNumber, String diaChi) {
+    public User(int id, String name, int phoneNumber, String diaChi, String userName, String password) {
         this.id = id;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.diaChi = diaChi;
+        this.userName = userName;
+        this.password = password;
     }
 
     public int getId() {
@@ -48,6 +52,22 @@ public class User {
         this.diaChi = diaChi;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -55,6 +75,8 @@ public class User {
                 ", name='" + name + '\'' +
                 ", phoneNumber=" + phoneNumber +
                 ", diaChi='" + diaChi + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

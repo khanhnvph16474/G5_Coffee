@@ -22,7 +22,7 @@ import com.poly.g5_coffee.R;
 public class Dangki_Fragment extends Fragment {
 
     DBhelper databaseHelper;
-    EditText txtName , txtPass, txtRsPass, txtSDT, txtDiachi;
+    EditText edtName,edtUsername , edtPass, edtRsPass, edtSDT, edtDiachi;
     Button btbDangky, btnDangnhap;
     @Nullable
     @Override
@@ -30,11 +30,12 @@ public class Dangki_Fragment extends Fragment {
         View view = inflater.inflate(R.layout.dangky_fragment, container, false);
 
         databaseHelper = new DBhelper(getActivity());
-        txtName = view.findViewById(R.id.et_lusername);
-        txtPass = view.findViewById(R.id.et_lpassword);
-        txtRsPass = view.findViewById(R.id.et_lnhaplaipass);
-        txtSDT = view.findViewById(R.id.et_sdt);
-        txtDiachi = view.findViewById(R.id.et_diachi);
+        edtUsername = view.findViewById(R.id.edt_username);
+        edtPass = view.findViewById(R.id.edt_password);
+        edtRsPass = view.findViewById(R.id.edt_nhaplaipass);
+        edtName = view.findViewById(R.id.edt_name);
+        edtSDT = view.findViewById(R.id.edt_sdt);
+        edtDiachi = view.findViewById(R.id.edt_diachi);
         btbDangky = view.findViewById(R.id.btn_lregister);
         btnDangnhap = view.findViewById(R.id.btn_llogin);
 
@@ -42,44 +43,34 @@ public class Dangki_Fragment extends Fragment {
 
             @Override
             public void onClick(View v) {
-                String username = txtName.getText().toString();
-                String password = txtPass.getText().toString();
-                String confirm_password = txtRsPass.getText().toString();
-                if(username.equals("") || password.equals("") || confirm_password.equals("")){
-                    Toast.makeText(getContext(), "Fields Required", Toast.LENGTH_SHORT).show();
-                    CustomToast.makeText(getContext(), "Fields Required", CustomToast.LENGTH_LONG,CustomToast.ERROR,true).show();
-                }else{
-                    if(password.equals(confirm_password)){
-                        Boolean checkusername = databaseHelper.CheckUsername(username);
-                        if(checkusername == true){
-                            Boolean insert = databaseHelper.Insert(username, password);
-                            if(insert == true){
-                                CustomToast.makeText(getContext(), "Đăng kí thành công", CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
-                            }
-                        }else{
-                            CustomToast.makeText(getContext(), "Username already taken", CustomToast.LENGTH_LONG,CustomToast.WARNING,true).show();
-                        }
-                    }else{
-                        CustomToast.makeText(getContext(), "Password không trùng khớp", CustomToast.LENGTH_LONG, CustomToast.WARNING, true).show();
-                    }
-                }
+                String username = edtUsername.getText().toString();
+                String password = edtPass.getText().toString();
+                String confirm_password = edtRsPass.getText().toString();
+                String name = edtName.getText().toString();
+                String phone = edtSDT.getText().toString();
+                String diachi = edtDiachi.getText().toString();
+
 
             }
         });
         btnDangnhap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = txtName.getText().toString();
-                String pass = txtPass.getText().toString();
+                String username = edtUsername.getText().toString();
+                String password = edtPass.getText().toString();
+                String confirm_password = edtRsPass.getText().toString();
+                String name = edtName.getText().toString();
+                String phone = edtSDT.getText().toString();
+                String diachi = edtDiachi.getText().toString();
 
-                Boolean cheklogin = databaseHelper.CheckLogin(username, pass);
-                if(cheklogin == true){
-                    CustomToast.makeText(getContext(), "Đăng nhập thành công", CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
-                    Intent intent = new Intent(getActivity(), MainActivity.class);
-                    startActivity(intent);
-                }else {
-                    CustomToast.makeText(getContext(), "Đăng nhập thất bại", CustomToast.LENGTH_LONG,CustomToast.ERROR,true).show();
-                }
+//                Boolean cheklogin = databaseHelper.CheckLogin(username, pass);
+//                if(cheklogin == true){
+//                    CustomToast.makeText(getContext(), "Đăng nhập thành công", CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
+//                    Intent intent = new Intent(getActivity(), MainActivity.class);
+//                    startActivity(intent);
+//                }else {
+//                    CustomToast.makeText(getContext(), "Đăng nhập thất bại", CustomToast.LENGTH_LONG,CustomToast.ERROR,true).show();
+//                }
             }
         });
         return view;
