@@ -50,7 +50,7 @@ public class DangNhap_Fragment extends Fragment {
                 if(dao.checkLogin(username, pass)>0 || (username.equals("admin") && (pass.equals("admin")))){
                     Toast.makeText(getActivity(),"Login thành công", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(getActivity(),MainActivity.class);
+                    Intent intent = new Intent(getActivity(),ActivityAdmin.class);
                     intent.putExtra("user", username);
                     startActivity(intent);
                     getActivity().finish();

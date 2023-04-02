@@ -23,12 +23,12 @@ public class ProductDao {
 
     public long insert(Product obj){
         ContentValues values = new ContentValues();
-        values.put("tenSp", obj.nameSp);
+        values.put("nameSp", obj.nameSp);
         values.put("price", obj.price);
         values.put("soLuong", obj.soluong);
         values.put("message", obj.message);
 
-        return db.insert("product", null, values);
+        return db.insert("listProduct", null, values);
     }
 
     public int update(Product obj){
@@ -38,20 +38,20 @@ public class ProductDao {
         values.put("soLuong", obj.soluong);
         values.put("message", obj.message);
 
-        return db.update("product", values, "id=?", new String[]{String.valueOf(obj.id)});
+        return db.update("listProduct", values, "id=?", new String[]{String.valueOf(obj.id)});
     }
 
     public int delete(String id){
-        return db.delete("product", "id=?", new String[]{id});
+        return db.delete("listProduct", "id=?", new String[]{id});
     }
 
     public List<Product> getAll(){
-        String sql = "SELECT * FROM product";
+        String sql = "SELECT * FROM listProduct";
         return getData(sql);
     }
 
     public Product getID(String id){
-        String sql = "SELECT * FROM product WHERE id=?";
+        String sql = "SELECT * FROM listProduct WHERE id=?";
         List<Product> list = getData(sql, id);
         return list.get(0);
     }
@@ -65,9 +65,8 @@ public class ProductDao {
         while (c.moveToNext()){
             Product obj = new Product();
             obj.id = Integer.parseInt(c.getString(c.getColumnIndex("id")));
-            obj.nameSp = c.getString(c.getColumnIndex("tenSach"));
+            obj.nameSp = c.getString(c.getColumnIndex("nameSp"));
             obj.price = Integer.parseInt(c.getString(c.getColumnIndex("price")));
-            obj.soluong = Integer.parseInt(c.getString(c.getColumnIndex("soluong")));
             obj.message = c.getString(c.getColumnIndex("message"));
             list.add(obj);
         }

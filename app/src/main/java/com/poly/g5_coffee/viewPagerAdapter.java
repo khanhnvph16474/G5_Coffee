@@ -4,13 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.poly.g5_coffee.Fragment.CartFragment;
 import com.poly.g5_coffee.Fragment.fragmentHistory;
 import com.poly.g5_coffee.Fragment.fragmentHome;
 import com.poly.g5_coffee.Fragment.fragmentNotification;
-import com.poly.g5_coffee.Fragment.fragmentProfile;
+import com.poly.g5_coffee.Fragment.FragmentProfile;
 
 public class viewPagerAdapter extends FragmentStatePagerAdapter {
     public viewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
@@ -30,7 +29,7 @@ public class viewPagerAdapter extends FragmentStatePagerAdapter {
             case 3:
                 return new fragmentHistory();
             case 4:
-                return new fragmentProfile();
+                return new FragmentProfile();
             default:
                return new fragmentHome();
         }

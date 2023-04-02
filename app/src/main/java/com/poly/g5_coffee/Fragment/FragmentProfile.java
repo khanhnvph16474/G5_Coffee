@@ -20,7 +20,7 @@ import com.poly.g5_coffee.Activity.EditProfileUserActivity;
 import com.poly.g5_coffee.MyDialogFragment;
 import com.poly.g5_coffee.R;
 
-public class fragmentProfile extends Fragment {
+public class FragmentProfile extends Fragment {
     Button btn_edit_profile, btn_changePassword, btn_logOut;
     @Nullable
     @Override
