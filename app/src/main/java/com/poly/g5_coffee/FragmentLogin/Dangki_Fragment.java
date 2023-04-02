@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.poly.g5_coffee.Activity.ActivityAdmin;
 import com.poly.g5_coffee.CustomToast;
 import com.poly.g5_coffee.DBhelper;
 import com.poly.g5_coffee.MainActivity;
@@ -80,17 +81,26 @@ public class Dangki_Fragment extends Fragment {
                 String username = edtUsername.getText().toString();
                 String password = edtPass.getText().toString();
 
-                String name = edtName.getText().toString();
-                String phone = edtSDT.getText().toString();
-                String diachi = edtDiachi.getText().toString();
-
-                Boolean cheklogin = dao.checkLogin(username, password);
-                if(cheklogin == true){
-                    Toast.makeText(getContext(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                if(username.isEmpty()||password.isEmpty()){
+                    Toast.makeText(getActivity(),"Tên đăng nhập và mật khẩu không được bỏ trống",
+                            Toast.LENGTH_SHORT).show();
+                }
+                if(dao.checkLogin(username, password)>0){
+                    Toast.makeText(getActivity(),"Login thành công", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(),MainActivity.class);
+                    intent.putExtra("user", username);
                     startActivity(intent);
+                    getActivity().finish();
+                }
+                else if((username.equals("admin") && (password.equals("admin")))){
+                    Toast.makeText(getActivity(),"Login thành công", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(getActivity(),ActivityAdmin.class);
+                    intent.putExtra("user", username);
+                    startActivity(intent);
+                    getActivity().finish();
                 }else {
-                    Toast.makeText(getContext(), "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),"Tên đăng nhập và mật khẩu không đúng", Toast.LENGTH_SHORT).show();
                 }
             }
         });

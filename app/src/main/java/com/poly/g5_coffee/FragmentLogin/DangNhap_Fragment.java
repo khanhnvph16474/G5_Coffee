@@ -42,31 +42,31 @@ public class DangNhap_Fragment extends Fragment {
             public void onClick(View v) {
                 String username = edtname.getText().toString();
                 String pass = edtpass.getText().toString();
-                Boolean checkLogin = dao.checkLogin(username, pass);
-                if (username.isEmpty() || pass.isEmpty()) {
-                    Toast.makeText(getActivity(), "Tên đăng nhập và mật khẩu không được bỏ trống",
+
+                if(username.isEmpty()||pass.isEmpty()){
+                    Toast.makeText(getActivity(),"Tên đăng nhập và mật khẩu không được bỏ trống",
                             Toast.LENGTH_SHORT).show();
-                } else {
-                    if (checkLogin == true) {
-                        Toast.makeText(getContext(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(getActivity(), MainActivity.class);
-                        startActivity(intent);
-                    }
-
-
-                    if ((username.equals("admin") && (pass.equals("admin")))) {
-                        Toast.makeText(getActivity(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-
-                        Intent intent = new Intent(getActivity(), ActivityAdmin.class);
-                        intent.putExtra("user", username);
-                        startActivity(intent);
-                        getActivity().finish();
-                    }else{
-                        Toast.makeText(getActivity(), "Tên đăng nhập hoặc mật khẩu không đúng",
-                                Toast.LENGTH_SHORT).show();
-                    }
-
                 }
+                if(dao.checkLogin(username, pass)>0){
+                    Toast.makeText(getActivity(),"Login thành công", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(),MainActivity.class);
+                    intent.putExtra("user", username);
+                    startActivity(intent);
+                    getActivity().finish();
+                }
+                else if((username.equals("admin") && (pass.equals("admin")))){
+                    Toast.makeText(getActivity(),"Login thành công", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(getActivity(),ActivityAdmin.class);
+                    intent.putExtra("user", username);
+                    startActivity(intent);
+                    getActivity().finish();
+                }
+
+                else {
+                    Toast.makeText(getActivity(),"Tên đăng nhập và mật khẩu không đúng", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
         return view;
