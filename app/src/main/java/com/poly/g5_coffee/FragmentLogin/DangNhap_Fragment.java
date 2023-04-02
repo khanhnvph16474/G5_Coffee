@@ -47,7 +47,7 @@ public class DangNhap_Fragment extends Fragment {
                     Toast.makeText(getActivity(),"Tên đăng nhập và mật khẩu không được bỏ trống",
                             Toast.LENGTH_SHORT).show();
                 }
-                if(dao.checkLogin(username, pass)>0){
+                else if(dao.checkLogin(username, pass)>0){
                     Toast.makeText(getActivity(),"Login thành công", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getActivity(),MainActivity.class);
                     intent.putExtra("user", username);
