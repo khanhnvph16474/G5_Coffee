@@ -18,42 +18,46 @@ import com.poly.g5_coffee.CustomToast;
 import com.poly.g5_coffee.DBhelper;
 import com.poly.g5_coffee.MainActivity;
 import com.poly.g5_coffee.R;
+import com.poly.g5_coffee.dao.UserDao;
 
 
 public class DangNhap_Fragment extends Fragment {
     Button btnlogin;
-    EditText txtname, txtpass;
+    EditText edtname, edtpass;
     DBhelper databaseHelper;
     CustomToast customToast;
+    UserDao dao;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.dangnhap_fragment, container, false);
 
-        databaseHelper = new DBhelper(getActivity());
-        txtname = view.findViewById(R.id.et_lusername);
-        txtpass = view.findViewById(R.id.et_lpassword);
+
+        edtname = view.findViewById(R.id.et_lusername);
+        edtpass = view.findViewById(R.id.et_lpassword);
         btnlogin = view.findViewById(R.id.btn_llogin);
+        dao = new UserDao(getActivity());
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = txtname.getText().toString();
-                String pass = txtpass.getText().toString();
+                String username = edtname.getText().toString();
+                String pass = edtpass.getText().toString();
 
-                Boolean cheklogin = databaseHelper.CheckLogin(username, pass);
-                if (username.equalsIgnoreCase("admin")&&pass.equalsIgnoreCase("admin")){
-                    customToast.makeText(getContext(), "Đăng nhập thành công Admin Account", CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
-                    Intent intentAdmin = new Intent(getActivity(), ActivityAdmin.class);
-                    startActivity(intentAdmin);
+                if(username.isEmpty()||pass.isEmpty()){
+                    Toast.makeText(getActivity(),"Tên đăng nhập và mật khẩu không được bỏ trống",
+                            Toast.LENGTH_SHORT).show();
                 }
-                else if(cheklogin == true){
-                    customToast.makeText(getContext(), "Đăng nhập thành công", CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
-                    Intent intent = new Intent(getActivity(), MainActivity.class);
+                if(dao.checkLogin(username, pass)>0 || (username.equals("admin") && (pass.equals("admin")))){
+                    Toast.makeText(getActivity(),"Login thành công", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(getActivity(),MainActivity.class);
+                    intent.putExtra("user", username);
                     startActivity(intent);
+                    getActivity().finish();
                 }else {
-                    customToast.makeText(getContext(), "Tài khoản hoặc mật khẩu không chính xác", CustomToast.LENGTH_LONG,CustomToast.ERROR,true).show();
-                    txtpass.setText("");
+                    Toast.makeText(getActivity(),"Tên đăng nhập và mật khẩu không đúng", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
         return view;
