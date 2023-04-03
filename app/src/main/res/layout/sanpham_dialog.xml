@@ -5,19 +5,11 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/edMaSanPham"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:hint="Mã Sản Phẩm: " />
-    <EditText
         android:id="@+id/edTenSanPham"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="20dp"
         android:hint="Tên Sản Phẩm: " />

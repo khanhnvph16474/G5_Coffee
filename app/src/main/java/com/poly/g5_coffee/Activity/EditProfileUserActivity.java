@@ -38,7 +38,7 @@ public class EditProfileUserActivity extends AppCompatActivity {
 
 
                 if(validate()>0){
-                    if(dao.update(user)>0){
+                    if(dao.update(user)>=1){
                         Toast.makeText(EditProfileUserActivity.this, "Sửa Thành Công", Toast.LENGTH_SHORT).show();
                     }else {
                         Toast.makeText(EditProfileUserActivity.this,  "Sửa Thất Bại", Toast.LENGTH_SHORT).show();

@@ -64,11 +64,11 @@ public class Dangki_Fragment extends Fragment {
                 }else {
                     if (dao.insert(user) > 0) {
                         Toast.makeText(getActivity(), "Đăng kí thành công", Toast.LENGTH_SHORT).show();
-//                    edtName.setText("");
-//                    edtSDT.setText("");
-//                    edtDiachi.setText("");
-//                    edtUsername.setText("");
-//                    edtPass.setText("");
+                        edtName.setText("");
+                        edtSDT.setText("");
+                        edtDiachi.setText("");
+                        edtUsername.setText("");
+                        edtPass.setText("");
                     } else {
                         Toast.makeText(getActivity(), "Lưu thất bại", Toast.LENGTH_SHORT).show();
                     }

@@ -43,13 +43,8 @@ public class UserDao {
         values.put("diaChi", obj.diaChi);
         values.put("userName", obj.userName);
         values.put("password", obj.password);
-        long kq = db.update("listUser", values, "id=?", new String[]{String.valueOf(obj.id)});
+        return db.update("listUser", values, "id=?", new String[]{String.valueOf(obj.id)});
 
-        if(kq<0){
-            return -1;
-        }else {
-            return 1;
-        }
 
     }
 

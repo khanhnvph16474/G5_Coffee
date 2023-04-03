@@ -71,7 +71,6 @@ public class HomeAdminFragment extends Fragment {
     protected void openDialog(final Context context, final int type){
         dialog = new Dialog(context);
         dialog.setContentView(R.layout.sanpham_dialog);
-        edMaSp = dialog.findViewById(R.id.edMaSanPham);
         edTenSp = dialog.findViewById(R.id.edTenSanPham);
         edGia = dialog.findViewById(R.id.edGiaSanPham);
        edMoTa = dialog.findViewById(R.id.edMoTa);

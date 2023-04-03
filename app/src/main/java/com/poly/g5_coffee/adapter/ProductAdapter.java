@@ -59,8 +59,6 @@ public class ProductAdapter extends BaseAdapter {
         }
         final Product item = list.get(position);
         if(item != null){
-            tvMaSP = v.findViewById(R.id.tvMaSp);
-            tvMaSP.setText("Mã Sản phẩm: "+item.id);
             tvTenSP = v.findViewById(R.id.tvTenSp);
             tvTenSP.setText("Tên Sản phẩm: "+item.nameSp);
             tvGia = v.findViewById(R.id.tvGia);
