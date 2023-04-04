@@ -4,25 +4,34 @@
     android:layout_height="wrap_content"
     android:padding="15dp"
     android:orientation="vertical"
-    android:background="#ACE9F1"
     >
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:background="#ACE9F1"
+        android:gravity="center_vertical"
+        >
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal"
         android:src="@drawable/cf_img"/>
     <TextView
         android:id="@+id/tv_name_item_home_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:textStyle="bold"
-        android:layout_marginLeft="18dp"
+        android:layout_gravity="center_horizontal"
         android:hint="Name"/>
     <TextView
         android:id="@+id/tv_price_item_home_user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="18dp"
+        android:layout_gravity="center_horizontal"
         android:hint="Price"
+        android:textSize="12dp"
         />
+    </LinearLayout>
 </LinearLayout>
