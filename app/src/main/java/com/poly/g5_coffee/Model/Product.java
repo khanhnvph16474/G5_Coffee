@@ -1,6 +1,8 @@
 package com.poly.g5_coffee.Model;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     public int id;
     public String nameSp;
     public int price;

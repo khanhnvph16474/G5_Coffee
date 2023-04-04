@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class chitietsanpham extends AppCompatActivity {
+public class Chitietsanpham extends AppCompatActivity {
     ImageView back, remore, add, anh;
     TextView tensanpham, noidungsanpham, soluong, giatien;
     LinearLayout them;
@@ -21,10 +21,10 @@ public class chitietsanpham extends AppCompatActivity {
         remore = findViewById(R.id.remove);
         add = findViewById(R.id.add);
         anh = findViewById(R.id.anh);
-        tensanpham = findViewById(R.id.tensanpham);
-        noidungsanpham = findViewById(R.id.noidungsanpham);
+        tensanpham = findViewById(R.id.tvt_name_product);
+        noidungsanpham = findViewById(R.id.tvt_message_product);
         soluong = findViewById(R.id.soluong);
-        giatien = findViewById(R.id.gia);
+        giatien = findViewById(R.id.tvt_price_product);
         them = findViewById(R.id.them);
         them.setOnClickListener(new View.OnClickListener() {
             @Override

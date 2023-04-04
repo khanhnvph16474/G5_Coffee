@@ -24,16 +24,16 @@
             android:textColor="@color/white"
             />
     </LinearLayout>
+
     <ImageView
         android:id="@+id/anh"
-        android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:background="@drawable/ct_bogoctron"
-        />
+        android:layout_margin="20dp"
+        android:background="@drawable/cf_img" />
     <TextView
         android:layout_margin="10dp"
-        android:id="@+id/tensanpham"
+        android:id="@+id/tvt_name_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="TEN SAN PHAM"
@@ -42,7 +42,7 @@
         />
     <TextView
         android:layout_margin="10dp"
-        android:id="@+id/noidungsanpham"
+        android:id="@+id/tvt_message_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="noi dung san pham"
@@ -75,7 +75,7 @@
             android:src="@drawable/ic_baseline_add_circle_24"
             />
         <TextView
-            android:id="@+id/gia"
+            android:id="@+id/tvt_price_product"
             android:layout_marginLeft="60dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
