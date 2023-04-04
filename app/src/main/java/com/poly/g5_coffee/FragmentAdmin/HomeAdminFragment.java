@@ -37,7 +37,7 @@ public class HomeAdminFragment extends Fragment {
     ArrayList<Product> list;
     FloatingActionButton btn_add;
     Dialog dialog;
-    EditText edMaSp, edTenSp, edGia, edMoTa;
+    EditText  edTenSp, edGia, edMoTa;
     Button btnSave, btnCancel;
     static ProductDao dao;
     ProductAdapter adapter;
@@ -55,6 +55,7 @@ public class HomeAdminFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 openDialog(getActivity(), 0);
+
             }
         });
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -80,7 +81,6 @@ public class HomeAdminFragment extends Fragment {
         //chạy cái app chết luôn ???
         //edMaSp.setEnabled(false);
         if(type != 0){
-            edMaSp.setText(String.valueOf(item.id));
             edTenSp.setText(item.nameSp);
             edGia.setText(String.valueOf(item.price));
             edMoTa.setText(item.message);
@@ -105,13 +105,6 @@ public class HomeAdminFragment extends Fragment {
                         }else {
                             Toast.makeText(context, "Thêm Thất Bại", Toast.LENGTH_SHORT).show();
                         }
-                    }else {
-                        item.id = Integer.parseInt(edMaSp.getText().toString());
-                        if(dao.update(item)>0){
-                            Toast.makeText(context, "Sửa Thành Công", Toast.LENGTH_SHORT).show();
-                        }else {
-                            Toast.makeText(context, "Sửa Thất Bại", Toast.LENGTH_SHORT).show();
-                        }
                     }
                     capNhatLv();
                     dialog.dismiss();
@@ -121,6 +114,7 @@ public class HomeAdminFragment extends Fragment {
         dialog.show();
 
     }
+
     public void xoa(final String Id){
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Delete");
@@ -131,18 +125,43 @@ public class HomeAdminFragment extends Fragment {
             public void onClick(DialogInterface dialogInterface, int i) {
                 dao.delete(Id);
                 capNhatLv();
-                dialog.cancel();
+
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                dialog.cancel();
+
             }
         });
         AlertDialog alert = builder.create();
         alert.show();
     }
+
+    public void update(final String Id){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle("Delete");
+        builder.setMessage("Bạn có muốn xóa không?");
+        builder.setCancelable(true);
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dao.delete(Id);
+                capNhatLv();
+
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
+
+
     void capNhatLv(){
         list = (ArrayList<Product>) dao.getAll();
         adapter = new ProductAdapter(getActivity(), this, list);
@@ -157,5 +176,6 @@ public class HomeAdminFragment extends Fragment {
         }
         return check;
     }
+
 
 }

@@ -21,22 +21,22 @@ public class ChangePasswordActivity extends AppCompatActivity {
     EditText edt_pass,edt_rspass;
     UserDao dao;
     User user;
-    ArrayList<User> list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
 
         edt_pass = findViewById(R.id.edt_pass);
-        edt_rspass = findViewById(R.id.edt_rspass);
+        edt_rspass = findViewById(R.id.edt_rs_pass);
         btn_rspass = findViewById(R.id.btn_rsPass);
+        user = new User();
         dao = new UserDao(ChangePasswordActivity.this);
 
         btn_rspass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                    user = new User();
+
                     user.password = edt_pass.getText().toString();
                     if( validate()>0){
                     if(dao.update(user)>0){

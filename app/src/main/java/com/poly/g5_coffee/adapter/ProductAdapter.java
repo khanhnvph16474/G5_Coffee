@@ -25,7 +25,7 @@ public class ProductAdapter extends BaseAdapter {
     private Context context;
     HomeAdminFragment fragment;
     private ArrayList<Product> list;
-    TextView tvMaSP, tvTenSP, tvGia;
+    TextView tvMota, tvTenSP, tvGia;
     ImageView imgDel;
 
     public ProductAdapter(@NonNull Context context, HomeAdminFragment fragment, ArrayList<Product> list) {
@@ -67,6 +67,9 @@ public class ProductAdapter extends BaseAdapter {
             tvTenSP.setText("Tên Sản phẩm:  "+item.nameSp);
             tvGia = v.findViewById(R.id.tvGia);
             tvGia.setText("Giá : "+item.price);
+            tvMota = v.findViewById(R.id.tvMota);
+            tvMota.setText("Mô tả: "+item.message);
+
 
             imgDel = v.findViewById(R.id.imgDeleteS);
         }

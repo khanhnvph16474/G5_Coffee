@@ -10,14 +10,6 @@ public class Product {
     public Product() {
     }
 
-    public Product(int id, String nameSp, int price, int soluong, String message) {
-        this.id = id;
-        this.nameSp = nameSp;
-        this.price = price;
-        this.soluong = soluong;
-        this.message = message;
-    }
-
     public int getId() {
         return id;
     }

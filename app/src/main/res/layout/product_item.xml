@@ -43,10 +43,18 @@
             android:text="MoTa"/>
     </LinearLayout>
     <ImageView
-        android:id="@+id/imgDeleteS"
-        android:layout_width="0dp"
+        android:id="@+id/img_creat_item_product"
+        android:layout_width="10dp"
         android:layout_height="85dp"
         android:layout_weight="1"
+        android:src="@drawable/ic_create"/>
+    <ImageView
+        android:id="@+id/imgDeleteS"
+        android:layout_width="10dp"
+        android:layout_height="85dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:src="@drawable/ic_delete"/>
 
 </LinearLayout>
