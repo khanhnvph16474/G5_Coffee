@@ -1,14 +1,11 @@
 package com.poly.g5_coffee.Fragment;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
-import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,7 +13,6 @@ import androidx.fragment.app.Fragment;
 
 import com.poly.g5_coffee.Model.Product;
 import com.poly.g5_coffee.R;
-import com.poly.g5_coffee.adapter.ProductAdapter;
 import com.poly.g5_coffee.adapter.ProductAdapterHomeUser;
 import com.poly.g5_coffee.dao.ProductDao;
 

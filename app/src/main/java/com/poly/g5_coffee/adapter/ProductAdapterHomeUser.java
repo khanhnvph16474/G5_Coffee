@@ -59,8 +59,8 @@ public class ProductAdapterHomeUser extends BaseAdapter {
         if (item != null) {
             tvTenSP = v.findViewById(R.id.tv_name_item_home_user);
             tvTenSP.setText(item.nameSp);
-//            tvGia = v.findViewById(R.id.tv_price_item_home_user);
-//            tvGia.setText(item.price);
+            tvGia = v.findViewById(R.id.tv_price_item_home_user);
+            tvGia.setText(item.price + " VND");
         }
         return v;
     }
