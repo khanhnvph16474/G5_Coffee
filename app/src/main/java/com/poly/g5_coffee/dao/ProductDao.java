@@ -6,7 +6,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.poly.g5_coffee.DBhelper;
+import com.poly.g5_coffee.Database.DBhelper;
 import com.poly.g5_coffee.Model.Product;
 
 import java.util.ArrayList;

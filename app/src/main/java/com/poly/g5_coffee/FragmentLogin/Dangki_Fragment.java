@@ -14,8 +14,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.poly.g5_coffee.Activity.ActivityAdmin;
-import com.poly.g5_coffee.CustomToast;
-import com.poly.g5_coffee.DBhelper;
 import com.poly.g5_coffee.MainActivity;
 import com.poly.g5_coffee.Model.User;
 import com.poly.g5_coffee.R;

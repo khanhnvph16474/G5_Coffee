@@ -73,12 +73,12 @@ public class HomeAdminFragment extends Fragment {
         dialog.setContentView(R.layout.sanpham_dialog);
         edTenSp = dialog.findViewById(R.id.edTenSanPham);
         edGia = dialog.findViewById(R.id.edGiaSanPham);
-       edMoTa = dialog.findViewById(R.id.edMoTa);
+        edMoTa = dialog.findViewById(R.id.edMoTa);
         btnSave = dialog.findViewById(R.id.btnSaveSach);
         btnCancel = dialog.findViewById(R.id.btnCancelSach);
 
-
-        edMaSp.setEnabled(false);
+        //chạy cái app chết luôn ???
+        //edMaSp.setEnabled(false);
         if(type != 0){
             edMaSp.setText(String.valueOf(item.id));
             edTenSp.setText(item.nameSp);

@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Fragment.FragmentProfile">
 
+    <SearchView
+        android:id="@+id/id_sv_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="225dp"
+        android:layout_marginLeft="33dp"
+        android:src="@drawable/coffee_baner"
+        android:padding="10dp"/>
+
+    <GridView
+        android:id="@+id/id_gridview_Home"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="23dp"
+        android:numColumns="2" />
 
 
-</RelativeLayout>
+</LinearLayout>
