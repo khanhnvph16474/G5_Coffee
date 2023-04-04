@@ -1,4 +1,4 @@
-package com.poly.g5_coffee;
+package com.poly.g5_coffee.Database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

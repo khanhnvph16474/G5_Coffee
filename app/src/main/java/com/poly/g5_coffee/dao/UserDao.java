@@ -6,11 +6,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.poly.g5_coffee.DBhelper;
-import com.poly.g5_coffee.FragmentLogin.Dangki_Fragment;
-import com.poly.g5_coffee.Model.Product;
+import com.poly.g5_coffee.Database.DBhelper;
 import com.poly.g5_coffee.Model.User;
-import com.poly.g5_coffee.adapter.UserAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
