@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -35,22 +36,6 @@ public class FragmentHome extends Fragment {
         gridViewCF = view.findViewById(R.id.id_gridview_Home);
         dao = new ProductDao(getActivity());
         capNhatLv();
-
-//        gridViewCF.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-//            @Override
-//            public boolean onItemLongClick(AdapterView<?> parent, View view, int i, long id) {
-//                item = list.get(i);
-//                CustomToast.makeText(getContext(),"Đặt hàng thành công",CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
-//
-//                return false;
-//            }
-//        });
-        gridViewCF.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Dialog();
-            }
-        });
         return view;
     }
 
@@ -61,24 +46,5 @@ public class FragmentHome extends Fragment {
         adapter = new ProductAdapterHomeUser(getActivity(), this, list);
         gridViewCF.setAdapter(adapter);
     }
-    public  void Dialog(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle("Thông báo");
-        builder.setMessage("Bạn muốn thêm sản phẩm vào giỏ hàng ?");
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                CustomToast.makeText(getContext(),"Thêm thành công", CustomToast.LENGTH_LONG,CustomToast.SUCCESS,true).show();
-            
-            }
-        });
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                CustomToast.makeText(getContext(),"Hủy",CustomToast.LENGTH_LONG,CustomToast.ERROR,true).show();
-            }
-        });
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-    }
+
 }

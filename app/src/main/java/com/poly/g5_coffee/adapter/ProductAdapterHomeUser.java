@@ -73,6 +73,7 @@ public class ProductAdapterHomeUser extends BaseAdapter {
             public void onClick(View v) {
                 Intent intent = new Intent(context, Chitietsanpham.class);
                 Bundle bundle = new Bundle();
+                product = new Product();
                 bundle.putSerializable("item_product", product);
                 intent.putExtras(bundle);
                 context.startActivity(intent);

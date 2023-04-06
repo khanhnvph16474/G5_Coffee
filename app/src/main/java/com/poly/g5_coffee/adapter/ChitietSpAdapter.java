@@ -54,7 +54,6 @@ public class ChitietSpAdapter extends BaseAdapter {
             tvGia.setText(item.price + " VND");
             tvMessage = v.findViewById(R.id.tvt_message_product);
             tvMessage.setText(item.message);
-
         }
         return v;
     }
